@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>副业 Planner</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style>
+        body {
+   
+        }
+
+        .container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        h2 {
+            color: #343a40;
+			margin-bottom:15px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        table {
+            background-color: #ffffff;
+        }
+
+        th, td {
+            text-align: left;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+		input{
+			margin-bottom:15px;
+		}
+        /* Add a custom style for the navbar */
+        .navbar {
+            font-size: 1.5rem; /* Adjust the font size as needed */
+			justify-content:center;
+			background-color:white;
+			width:100%;
+			padding:20px;
+			
+        }
+		li{
+			margin-bottom:10px;
+		}
+    </style>
+</head>
+
+<body>
+    <!-- Add the navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <h1><strong>副业规划工具</strong></h1>
+		
+        <!-- You can add additional navigation links here if needed -->
+    </nav>
+    <div class="container">
+		<div class="section">
+			<ol>
+				<li>如果你是第一次，回答 Part 1 和 Part 2找出你的方向</li>
+				<li>如果你想盘，找到问题，或者你执行到一半不顺利想要一些点子，可以直接跳去Part 3</li>
+				<li>如果喜欢这个程序，可以保持在手机的homescreem, 方便过后使用。不会的话，方法已经放在Part 4，可以去看看。</li>
+				<li>如果这个app 帮到你，或者你想要什么功能，记得反馈给我们，有需求，我们就会持续提升这个小程序，以继续帮助大家。</li>
+			</ol>
+		</div>
+        <!-- Part 1 - Brainstorming -->
+        <div class="section">
+            <h2>Part 1 - 找出你的方向</h2>
+            <!-- Include your questions here as input fields -->
+            <label for="question1">1. 你认为什么技能/条件可以帮到你副业有长期的稳定收入？</label>
+            <input type="text" class="form-control" id="question1">
+
+            <label for="question2">2. 你的客户群在哪里？(网上？社交？upwork副业平台？)</label>
+            <input type="text" class="form-control" id="question2">
+
+            <label for="question3">3. 如果没有适合的客户，你会如何找客户？</label>
+            <input type="text" class="form-control" id="question3">
+
+            <label for="question4">4. 列出至少10个可能的客户群。</label>
+            <input type="text" class="form-control" id="question4">
+
+            <label for="question5">5. 你的客户面对什么问题是他们要解决的？</label>
+            <input type="text" class="form-control" id="question5">
+
+            <label for="question6">6. 应用你的技能，你的解决方案是什么？</label>
+            <input type="text" class="form-control" id="question6">
+
+            <label for="question7">7. 你能否做出作品集？</label>
+            <input type="text" class="form-control" id="question7">
+
+            <label for="question8">8. 可能是免费帮几个人解决问题，可能是自己做一些作品？</label>
+            <input type="text" class="form-control" id="question8">
+
+            <label for="question9">9. 你应该如何介绍自己的副业，让别人买单？</label>
+            <input type="text" class="form-control" id="question9">
+
+
+        </div>
+
+        <!-- Part 2 - 马上实现你的梦想 -->
+        <div class="section">
+            <h2>Part 2 - 马上实现你的梦想</h2>
+            <label for="goal1">你这个星期会做哪3件事情，来帮你创造副业？</label>
+            <textarea class="form-control" id="goal1" rows="5"></textarea>
+            <!-- Repeat for other goals -->
+        </div>
+
+        <!-- Part 3 - 检查问题 -->
+        <div class="section">
+            <h2>Part 3 - 检查问题</h2>
+            <!-- Display table with user responses -->
+			<p>提出正确的问题，快速帮助你解决关键问题。通过这个框架，你将了解下一步解决困难问题所需的步骤。</p><br>
+			<form id="retrospectiveForm">
+				<div class="form-group">
+					<label for="event">想要调整的事件/发生的事件</label>
+					<input type="text" class="form-control" id="event" name="event" placeholder="例如：项目进度不如预期">
+				</div>
+				<div class="form-group">
+					<label for="result">结果</label>
+					<input type="text" class="form-control" id="result" name="result" placeholder="导致项目截止日期延迟">
+				</div>
+				<div class="form-group">
+					<label for="opinion">你认为怎么样</label>
+					<textarea class="form-control" id="opinion" name="opinion" rows="3" placeholder="为项目设立目标的时候太过于理想化了"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="progress">进展顺利的事情</label>
+					<textarea class="form-control" id="progress" name="progress" rows="3" placeholder="每天坚持有进展。有学习到新的东西"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="improvements">需要改进的事情</label>
+					<textarea class="form-control" id="improvements" name="improvements" rows="3" placeholder="改进对项目的期待和处理方式。具体为每3天一个复盘和容错期。同时需要暂时不看剧，确保项目有在推进"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="actionPlan">即时行动计划</label>
+					<textarea class="form-control" id="actionPlan" name="actionPlan" rows="3" placeholder="1. 3天复盘一次项目进度&#10;2. 把看剧的20分钟加在做项目的时间，一个星期后观察结果."></textarea>
+				</div>
+
+			</form>
+            <h2>小贴士</h2>
+			<ul>
+				<li>如果你卡在Part 1 第一题，就是你需要开始学习技能</li>
+				<li>如果你卡在第2 - 5题，那你就要做更多的市场调查</li>
+				<!-- Repeat for other tips -->
+				<li>如果你卡在第6 - 7题，可以参考别人怎么做，做头脑风暴，或者和别人聊聊天，找出点子</li>
+				<li>如果你卡在第8题，你需要的是知道如何将你解决问题的过程，或者想法，记录下来，然后整理成可以分享给人的故事。题，你需要的是知道如何将你解决问题的过程，或者想法，记录下来，然后整理成可以分享给人的故事。</li>
+				<li>如果你卡在第9题，可以看看知乎，小红书，上面就很多例子了。</li>
+			</ul>
+        </div>
+
+        <!-- Part 4 - Feedback Form -->
+
+        <div class="section">
+            <div class="row">
+                <div class="col-12 col-6" style="margin-bottom:30px;">
+                    <h2>Part 4 - 给我们一点意见</h2>
+                    <form action="https://script.google.com/macros/s/AKfycbxHQefQKgU5bVNMaDdbp_oP8mge0U2UAcvx2Y9M0c8kOJxpuCfJUbimgESUCeKJrZ2blg/exec" method="POST">
+                        <label for="feedback">提供反馈：</label>
+                        <textarea id="moreDetails" name="details" class="form-control" id="feedback" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">提交反馈</button>
+                    </form>
+                </div>
+                <div class="col-12 col-6">
+                    <h2>将 Web App 添加到主屏幕</h2>
+                    <p>在浏览器中打开，然后选择“添加到主屏幕”以创建应用的快捷方式。</p>
+                    <iframe src="https://www.youtube.com/embed/dTFaSVUlmA4?si=haZAEGNuYLF5ZXxc" frameborder="0" style="width:100%; min-height:400px;"allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<script>
+    // Check window width on load and resize
+    function updateColumnClasses() {
+        if ($(window).width() < 768) {
+            $('.col-6').removeClass('col-6').addClass('col-12');
+            $('.col-6').removeClass('col-6').addClass('col-12');
+        } else {
+            $('.col-12').removeClass('col-12').addClass('col-6');
+            $('.col-12').removeClass('col-12').addClass('col-6');
+        }
+    }
+
+    // Initial update
+    updateColumnClasses();
+
+    // Update on window resize
+    $(window).resize(function() {
+        updateColumnClasses();
+    });
+	
+	// track view 
+	window.onload = function() {
+	console.log("hi")
+	// Fetch the URL
+    fetch('https://script.google.com/macros/s/AKfycbxMdAmgo9_wsiUIU23pRZpeYuHqd50RdKukED3w1Q_fRmyuGrqQBEcavc-WxI-7PQQg8A/exec?view=3')
+        .then(response => response.json()
+		
+		)
+        .then(data => {
+            // Handle the data as needed
+            console.log(data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error fetching data:', error);
+        });
+		addAppToHomeScreen()
+	
+	};
+
+	setTimeout(function () {
+		fetch('https://script.google.com/macros/s/AKfycbxMdAmgo9_wsiUIU23pRZpeYuHqd50RdKukED3w1Q_fRmyuGrqQBEcavc-WxI-7PQQg8A/exec?home=3')
+		.then(response => response.json())
+		.then(data => {
+			console.log(data);
+		})
+		.catch(error => {
+			console.error('Error fetching data:', error);
+		});
+
+      }, 30000);
+	</script>
+
+</body>
+
+</html>
